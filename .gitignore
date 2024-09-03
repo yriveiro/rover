@@ -1,7 +1,8 @@
-build/rover
 .DS_Store
-rover.zip
+build/rover
 plan.out
+rover
+rover.zip
 
 # Ignore generated terraform files
 .terraform**
