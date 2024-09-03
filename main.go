@@ -274,7 +274,7 @@ func (r *rover) getPlan() error {
 		}
 
 		// Retrieve all runs from specified TFC workspace
-		runs, err := client.Runs.List(context.Background(), ws.ID, tfe.RunListOptions{})
+		runs, err := client.Runs.List(context.Background(), ws.ID, &tfe.RunListOptions{})
 		if err != nil {
 			return errors.New(fmt.Sprintf("Unable to retrieve plan from %s in %s organization. %s", r.TFCWorkspaceName, r.TFCOrgName, err))
 		}
@@ -331,7 +331,7 @@ func (r *rover) getPlan() error {
 		}
 
 		// Get most recent plan file
-		planBytes, err := client.Plans.JSONOutput(context.Background(), planID)
+		planBytes, err := client.Plans.ReadJSONOutput(context.Background(), planID)
 		if err != nil {
 			return errors.New(fmt.Sprintf("Unable to retrieve plan from %s in %s organization. %s", r.TFCWorkspaceName, r.TFCOrgName, err))
 		}

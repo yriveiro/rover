@@ -56,7 +56,7 @@ type EdgeData struct {
 	Gradient string `json:"gradient,omitempty"`
 }
 
-// GenerateGraph -
+// GenerateGraph
 func (r *rover) GenerateGraph() error {
 	log.Println("Generating resource graph...")
 
@@ -326,7 +326,7 @@ func (r *rover) addEdges(base string, parent string, edgeMap map[string]Edge, re
 	return emo
 }
 
-// GenerateEdges -
+// GenerateEdges
 func (r *rover) GenerateEdges() []Edge {
 	edgeMap := make(map[string]Edge)
 	emo := []string{}
